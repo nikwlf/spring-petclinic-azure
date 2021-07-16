@@ -33,9 +33,11 @@ jobs:
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
       
-- job: LSJOB
+- job: DebugJob
   displayName: Debug Job
   continueOnError: true
+  dependsOn: MavenJob
+  condition: succeeded()
   steps:
   - script: find ./
 
