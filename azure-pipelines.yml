@@ -21,8 +21,6 @@ jobs:
 - job: BuildAndTestJob
   displayName: Build And Test
   continueOnError: true
-  workspace:
-    clean: outputs
   steps:
   - task: Maven@3
     inputs:
@@ -34,3 +32,9 @@ jobs:
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
+      
+- job: LSJOB
+  displayName: Debug Job
+  continueOnError: true
+  steps:
+  - script: find /
