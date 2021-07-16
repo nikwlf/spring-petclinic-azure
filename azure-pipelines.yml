@@ -19,6 +19,10 @@ jobs:
   - script: echo My first job
 
 - job: BuildAndTestJob
+  displayName: Build And Test
+  continueOnError: true
+  workspace:
+    clean: outputs
   steps:
   - task: Maven@3
     inputs:
