@@ -18,8 +18,8 @@ jobs:
   steps:
   - script: echo My first job
 
-- job: BuildAndTestJob
-  displayName: Build And Test
+- job: MavenJob
+  displayName: Maven Job
   continueOnError: true
   steps:
   - task: Maven@3
@@ -37,4 +37,19 @@ jobs:
   displayName: Debug Job
   continueOnError: true
   steps:
-  - script: find /
+  - script: find ./
+
+- job: DockerJob
+    displayName: Docker Job
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - task: Docker@2
+      displayName: Build and push an image to container registry
+      inputs:
+        command: buildAndPush
+        repository: $(imageRepository)
+        dockerfile: $(dockerfilePath)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          $(tag)
