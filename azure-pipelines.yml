@@ -50,6 +50,6 @@ jobs:
       command: buildAndPush
       repository: $(imageRepository)
       dockerfile: $(dockerfilePath)
-      containerRegistry: $(dockerRegistryServiceConnection)
+      containerRegistry: $(RegistryServiceConnection)
       tags: |
         $(tag)
