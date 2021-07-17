@@ -47,12 +47,13 @@ jobs:
   pool:
     vmImage: ubuntu-latest
   steps:
+  - script: find ./
   - task: Docker@2
     displayName: Build and push an image to container registry
     inputs:
       command: buildAndPush
       repository: $(imageRepository)
-      dockerfile: $(dockerfilePath)
+      dockerfile: Dockerfile
       containerRegistry: $(RegistryServiceConnection)
       tags: |
         $(tag)
