@@ -8,6 +8,10 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+  
+variables:
+  tag: 'main'
+  imageRepository: 'azurePipelines'
 
 jobs:
 - job: MyJob
