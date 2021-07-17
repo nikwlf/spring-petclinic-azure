@@ -45,7 +45,7 @@ jobs:
 - job: DockerJob
   displayName: Docker Job
   pool:
-    vmImage: $(vmImageName)
+    vmImage: ubuntu-latest
   steps:
   - task: Docker@2
     displayName: Build and push an image to container registry
