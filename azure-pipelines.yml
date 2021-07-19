@@ -59,3 +59,4 @@ jobs:
       containerRegistry: $(RegistryServiceConnection)
       tags: |
         $(tag)
+      arguments: '--build-arg targetFilePath=$(Pipeline.Workspace)/buildTarget'
