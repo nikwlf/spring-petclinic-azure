@@ -37,6 +37,8 @@ jobs:
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
   - script: find ./
+  - publish: $(System.DefaultWorkingDirectory)/target
+    artifact: buildTarget
       
 - job: DebugJob
   displayName: Debug Job
