@@ -49,7 +49,7 @@ jobs:
   steps:
   - download: current
     artifact: buildTarget
-  - script: $(Pipeline.Workspace)
+  - script: $(Pipeline.Workspace)/
   - task: Docker@2
     displayName: Build and push an image to container registry
     inputs:
