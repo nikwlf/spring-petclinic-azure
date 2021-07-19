@@ -1,3 +1,3 @@
 FROM openjdk:8
-ADD $(Pipeline.Workspace)/buildTarget /src
+ADD targetFilePath /src
 CMD [ "/usr/bin/find", "/" ]
