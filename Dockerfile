@@ -1,5 +1,3 @@
-ARG targetFilePath
-
 FROM openjdk:8
-ADD targetFilePath /src
+ADD /home/vsts/work/1/buildTarget/ /src
 CMD [ "/usr/bin/find", "/" ]
